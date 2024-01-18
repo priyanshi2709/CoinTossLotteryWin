@@ -30,7 +30,7 @@ class CoinToss extends Component {
     else{
     this.state.showResult = true;
     
-    if (this.state.totalScore === 2 || this.state.totalScore === 5 || this.state.totalScore === 7) {
+    if (this.state.totalScore === 2 || this.state.totalScore === 5 || this.state.totalScore === 7 || this.state.totalScore === 4 || this.state.totalScore === 8 ||this.state.totalScore === 1 ||this.state.totalScore === 9) {
 
       this.setState((prevState, props) => {
         const val = prevState.selectedOption === 'heads' ? true : false;
@@ -43,17 +43,8 @@ class CoinToss extends Component {
         };
       });
 
-      console.log("Hello",this.isHead);
-
-
     } else {
-    //   this.setState(prevState => ({
-    //     isHead: false,
-    //     totalScore: prevState.totalScore + 1,
-    //     totalTails: prevState.totalTails + 1,
-    //     balance: prevState.balance - 40,
-    //   }))
-
+      
     this.setState((prevState, props) => {
         const val = prevState.selectedOption === 'heads' ? false : true;
         return {
