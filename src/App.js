@@ -1,25 +1,38 @@
 import logo from './logo.svg';
 import './App.css';
+import CoinToss from './components/CoinToss/coinToss';
+import LotteryOne from './components/Lottery/firstAsk';
+import Negative from './components/Lottery/negativeNudge';
+import Positive from './components/Lottery/positiveNudge';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useRoutes,
+} from "react-router-dom";
 
-function App() {
+
+const App = () => {
+  let routes = useRoutes([
+    { path: "/", element: <CoinToss /> },
+    { path: "lottery1", element: <LotteryOne /> },
+    { path: "positive", element: <Positive />},
+    { path: "negative", element: <Negative />},
+    // ...
+  ]);
+  return routes;
+};
+
+const AppWrapper = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <App />
+    </Router>
   );
-}
+};
 
-export default App;
+export default AppWrapper;
+
+//const App = () => <CoinToss />
+
+//export default App;
